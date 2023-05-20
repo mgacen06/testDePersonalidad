@@ -12,6 +12,9 @@ public class RespuestaInicial {
         this.idRespuesta = idRespuesta;
     }
 
+    public RespuestaInicial() {
+    }
+
     public String getTextoRespuesta() {
         return textoRespuesta;
     }

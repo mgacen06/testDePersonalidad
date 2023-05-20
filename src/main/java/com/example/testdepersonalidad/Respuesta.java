@@ -11,6 +11,9 @@ public class Respuesta {
         this.idRespuesta = idRespuesta;
     }
 
+    public Respuesta() {
+    }
+
     public int getPuntuacion() {
         return puntuacion;
     }

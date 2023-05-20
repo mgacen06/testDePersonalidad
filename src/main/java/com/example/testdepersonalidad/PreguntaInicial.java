@@ -13,6 +13,9 @@ public class PreguntaInicial {
         this.respuestasIniciales = respuestasIniciales;
     }
 
+    public PreguntaInicial() {
+    }
+
     public String getTextoPreguntaInicial() {
         return textoPreguntaInicial;
     }

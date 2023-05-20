@@ -13,6 +13,9 @@ public class Pregunta {
         this.respuestas = respuestas;
     }
 
+    public Pregunta() {
+    }
+
     public String getTextoPregunta() {
         return textoPregunta;
     }
