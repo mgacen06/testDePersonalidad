@@ -1,25 +1,18 @@
-package com.example.testdepersonalidad;
+package Modelo;
 
-public class Respuesta {
+public class RespuestaInicial {
+
     private String textoRespuesta;
-    private int puntuacion;
+    private String categoria;
     private int idRespuesta;
 
-    public Respuesta(String textoRespuesta, int puntuacion, int idRespuesta) {
+    public RespuestaInicial(String textoRespuesta, String categoria, int idRespuesta) {
         this.textoRespuesta = textoRespuesta;
-        this.puntuacion = puntuacion;
+        this.categoria = categoria;
         this.idRespuesta = idRespuesta;
     }
 
-    public Respuesta() {
-    }
-
-    public int getPuntuacion() {
-        return puntuacion;
-    }
-
-    public void setPuntuacion(int puntuacion) {
-        this.puntuacion = puntuacion;
+    public RespuestaInicial() {
     }
 
     public String getTextoRespuesta() {
@@ -28,6 +21,14 @@ public class Respuesta {
 
     public void setTextoRespuesta(String textoRespuesta) {
         this.textoRespuesta = textoRespuesta;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public int getIdRespuesta() {
@@ -40,8 +41,9 @@ public class Respuesta {
 
     @Override
     public String toString() {
-        return "Respuesta{" +
+        return "RespuestaInicial{" +
                 "textoRespuesta='" + textoRespuesta + '\'' +
+                ", categoria='" + categoria + '\'' +
                 ", idRespuesta=" + idRespuesta +
                 '}';
     }

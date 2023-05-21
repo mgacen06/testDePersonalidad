@@ -1,4 +1,6 @@
-package com.example.testdepersonalidad;
+package Modelo;
+
+import Modelo.Respuesta;
 
 import java.util.ArrayList;
 

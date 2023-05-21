@@ -1,4 +1,4 @@
-package com.example.testdepersonalidad;
+package Modelo;
 
 public class Personaje {
     private String nombre;
