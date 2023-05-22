@@ -1,15 +1,19 @@
-package Modelo;
+package com.example.testdepersonalidad.Modelo;
 
 public class Personaje {
     private String nombre;
     private int valor;
     private int idPersonaje;
+    private Atributo atributo;
 
-    public Personaje(String nombre, int valor, int id, int idPersonaje) {
+    public Personaje(String nombre, int valor, int idPersonaje, Atributo atributo) {
         this.nombre = nombre;
         this.valor = valor;
         this.idPersonaje = idPersonaje;
+        this.atributo = atributo;
+    }
 
+    public Personaje() {
     }
 
     public String getNombre() {
@@ -28,7 +32,6 @@ public class Personaje {
         this.valor = valor;
     }
 
-
     public int getIdPersonaje() {
         return idPersonaje;
     }
@@ -37,12 +40,21 @@ public class Personaje {
         this.idPersonaje = idPersonaje;
     }
 
+    public Atributo getAtributo() {
+        return atributo;
+    }
+
+    public void setAtributo(Atributo atributo) {
+        this.atributo = atributo;
+    }
+
     @Override
     public String toString() {
         return "Personaje{" +
                 "nombre='" + nombre + '\'' +
                 ", valor=" + valor +
-                ", id=" + idPersonaje +
+                ", idPersonaje=" + idPersonaje +
+                ", atributo=" + atributo +
                 '}';
     }
 }

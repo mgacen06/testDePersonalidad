@@ -6,10 +6,10 @@ module com.example.testdepersonalidad {
 
     opens com.example.testdepersonalidad to javafx.fxml;
     exports com.example.testdepersonalidad;
-    exports Modelo;
-    opens Modelo to javafx.fxml;
-    exports Vista;
-    opens Vista to javafx.fxml;
-    exports Controlador;
-    opens Controlador to javafx.fxml;
+    exports com.example.testdepersonalidad.Modelo;
+    opens com.example.testdepersonalidad.Modelo to javafx.fxml;
+    exports com.example.testdepersonalidad.Vista;
+    opens com.example.testdepersonalidad.Vista to javafx.fxml;
+    exports com.example.testdepersonalidad.Controlador;
+    opens com.example.testdepersonalidad.Controlador to javafx.fxml;
 }

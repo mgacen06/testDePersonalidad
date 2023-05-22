@@ -1,4 +1,4 @@
-package Controlador;
+package com.example.testdepersonalidad.Controlador;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
