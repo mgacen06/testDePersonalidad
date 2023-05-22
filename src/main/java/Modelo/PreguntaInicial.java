@@ -1,13 +1,15 @@
-package com.example.testdepersonalidad;
+package Modelo;
+
+import Modelo.Respuesta;
 
 import java.util.ArrayList;
 
 public class PreguntaInicial {
     private String textoPreguntaInicial;
     private int idPreguntaInicial;
-    private ArrayList<Respuesta> respuestasIniciales=new ArrayList<Respuesta>();
+    private ArrayList<RespuestaInicial> respuestasIniciales=new ArrayList<RespuestaInicial>();
 
-    public PreguntaInicial(String textoPreguntaInicial, int idPreguntaInicial, ArrayList<Respuesta> respuestasIniciales) {
+    public PreguntaInicial(String textoPreguntaInicial, int idPreguntaInicial, ArrayList<RespuestaInicial> respuestasIniciales) {
         this.textoPreguntaInicial = textoPreguntaInicial;
         this.idPreguntaInicial = idPreguntaInicial;
         this.respuestasIniciales = respuestasIniciales;
@@ -32,11 +34,11 @@ public class PreguntaInicial {
         this.idPreguntaInicial = idPreguntaInicial;
     }
 
-    public ArrayList<Respuesta> getRespuestasIniciales() {
+    public ArrayList<RespuestaInicial> getRespuestasIniciales() {
         return respuestasIniciales;
     }
 
-    public void setRespuestasIniciales(ArrayList<Respuesta> respuestasIniciales) {
+    public void setRespuestasIniciales(ArrayList<RespuestaInicial> respuestasIniciales) {
         this.respuestasIniciales = respuestasIniciales;
     }
 
