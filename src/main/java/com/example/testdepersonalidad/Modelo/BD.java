@@ -1,5 +1,4 @@
-package Modelo;
-import Modelo.PreguntaInicial;
+package com.example.testdepersonalidad.Modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

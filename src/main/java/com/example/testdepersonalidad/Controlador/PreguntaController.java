@@ -1,6 +1,6 @@
-package Controlador;
-import Modelo.BD;
-import Modelo.PreguntaInicial;
+package com.example.testdepersonalidad.Controlador;
+import com.example.testdepersonalidad.Modelo.BD;
+import com.example.testdepersonalidad.Modelo.PreguntaInicial;
 
 public class PreguntaController {
     public static void main(String[] args) {
