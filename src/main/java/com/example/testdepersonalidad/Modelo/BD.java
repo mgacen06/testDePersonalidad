@@ -34,7 +34,7 @@ public class BD {
         }
         return miPreguntaInicial;
     }
-    public static Pregunta montarPreguntaNormal(int id){
+    public static Pregunta montarPreguntaNormal(int id,String atributo){
         Connection conexion = null;
         Statement sentenciaSQL = null;
         ResultSet rs;
@@ -44,7 +44,7 @@ public class BD {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/testpersonalidad", "root", "");
             sentenciaSQL = conexion.createStatement();
-            rs= sentenciaSQL.executeQuery("select * from preguntaNormal where id="+id);
+            rs= sentenciaSQL.executeQuery("select * from preguntaNormal where id="+id+" and atributo="+atributo);
             rs.next();
             miPreguntaNormal.setIdPregunta(id);
             miPreguntaNormal.setTextoPregunta(rs.getString("pregunta"));
