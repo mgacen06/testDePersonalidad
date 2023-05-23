@@ -1,12 +1,12 @@
 package com.example.testdepersonalidad.Controlador;
-import com.example.testdepersonalidad.Modelo.BD;
-import com.example.testdepersonalidad.Modelo.PreguntaInicial;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import org.w3c.dom.Text;
 
-public class PreguntaController {
+public class PreguntaInicialController {
+
     @FXML
     private RadioButton OP1;
 
