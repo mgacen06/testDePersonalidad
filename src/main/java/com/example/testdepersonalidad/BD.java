@@ -53,7 +53,7 @@ public class BD {
         }
         return miPreguntaNormal;
     }
-    public static Personaje montarPersonaje(int puntuacion, Atributo categoria){
+    public static Personaje montarPersonaje(int puntuacion, String categoria){
         Connection conexion = null;
         Statement sentenciaSQL = null;
         ResultSet rs;
@@ -62,7 +62,7 @@ public class BD {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/testpersonalidad", "root", "");
             sentenciaSQL = conexion.createStatement();
-            rs= sentenciaSQL.executeQuery("select * from personaje where valor="+puntuacion+"and atributo="+categoria.toString()+" order by valor desc limit 1");
+            rs= sentenciaSQL.executeQuery("select * from personaje where valor<"+puntuacion+" and atributo='"+categoria+"' order by valor desc limit 1");
             rs.next();
             miPersonaje.setNombre(rs.getString("nombre"));
             miPersonaje.setAtributo(categoria);

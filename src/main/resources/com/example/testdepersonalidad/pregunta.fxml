@@ -18,19 +18,20 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <RadioButton fx:id="OP1" layoutX="57.0" layoutY="173.0" mnemonicParsing="false" text="OPCION 1" />
-        <RadioButton fx:id="OP2" layoutX="57.0" layoutY="212.0" mnemonicParsing="false" text="OPCION 2" />
-        <RadioButton fx:id="OP3" layoutX="57.0" layoutY="250.0" mnemonicParsing="false" text="OPCION 3" />
+        <RadioButton fx:id="OP1" layoutX="57.0" layoutY="173.0" mnemonicParsing="false" text="Verónica" />
+        <RadioButton fx:id="OP2" layoutX="57.0" layoutY="212.0" mnemonicParsing="false" text="Javier" />
+        <RadioButton fx:id="OP3" layoutX="57.0" layoutY="250.0" mnemonicParsing="false" text="Otro" />
         <Button fx:id="SIGUIENTE" layoutX="267.0" layoutY="315.0" mnemonicParsing="false" onAction="#siguientePregunta" text="Siguiente" />
         <Text layoutX="349.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/11">
             <font>
                 <Font size="25.0" />
             </font>
         </Text>
-        <Text layoutX="322.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xx">
+        <Text fx:id="contador" layoutX="322.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xx">
             <font>
                 <Font size="25.0" />
             </font>
         </Text>
+      <Button fx:id="acabar" layoutX="496.0" layoutY="315.0" mnemonicParsing="false" onAction="#irAFinal" text="TERMINAR" />
     </children>
 </Pane>

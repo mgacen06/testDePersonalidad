@@ -14,12 +14,6 @@ import java.io.IOException;
 
 public class HelloController {
     public static void main(String[] args) {
-        PreguntaInicial miPregunta=new PreguntaInicial();
-        miPregunta=BD.montarPreguntaInicial(1);
-        System.out.println(miPregunta.toString());
-        System.out.println(miPregunta.getRespuestasIniciales().get(0).getTextoRespuesta());
-        System.out.println(miPregunta.getRespuestasIniciales().get(1).getTextoRespuesta());
-        System.out.println(miPregunta.getRespuestasIniciales().get(2).getTextoRespuesta());
 
     }
 }

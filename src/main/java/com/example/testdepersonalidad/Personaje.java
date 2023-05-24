@@ -4,9 +4,9 @@ public class Personaje {
     private String nombre;
     private int valor;
     private int idPersonaje;
-    private Atributo atributo;
+    private String atributo;
 
-    public Personaje(String nombre, int valor, int idPersonaje, Atributo atributo) {
+    public Personaje(String nombre, int valor, int idPersonaje, String atributo) {
         this.nombre = nombre;
         this.valor = valor;
         this.idPersonaje = idPersonaje;
@@ -40,11 +40,11 @@ public class Personaje {
         this.idPersonaje = idPersonaje;
     }
 
-    public Atributo getAtributo() {
+    public String getAtributo() {
         return atributo;
     }
 
-    public void setAtributo(Atributo atributo) {
+    public void setAtributo(String atributo) {
         this.atributo = atributo;
     }
 
