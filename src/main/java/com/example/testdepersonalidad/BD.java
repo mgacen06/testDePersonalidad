@@ -46,11 +46,7 @@ public class BD {
             miPreguntaNormal.setTextoPregunta(rs.getString("pregunta"));
             rs = sentenciaSQL.executeQuery("select * from respuestaNormal where idpreguntaNormal="+id);
             while (rs.next()) {
-                miRespuestaNormal.setIdRespuesta(rs.getInt("id"));
-                miRespuestaNormal.setTextoRespuesta(rs.getString("respuesta"));
-                miRespuestaNormal.setPuntuacion(rs.getInt("puntuacion"));
-
-                miPreguntaNormal.getRespuestas().add(miRespuestaNormal);
+                miPreguntaNormal.getRespuestas().add(new Respuesta(rs.getString("respuesta"),rs.getInt("puntuacion"),rs.getInt("id")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
