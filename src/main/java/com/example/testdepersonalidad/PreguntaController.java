@@ -2,11 +2,17 @@ package com.example.testdepersonalidad;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -29,7 +35,7 @@ public class PreguntaController {
 
     @FXML
     private org.w3c.dom.Text contador;
-    private String atributo = "";
+    private Atributo atributo=Atributo.Otro;
     private int contadorNumero = 1;
     private int contadorId = 0;//contador de preguntas contestadas 0 a 6
 
@@ -44,7 +50,7 @@ public class PreguntaController {
     @FXML
     void siguientePregunta(ActionEvent event) {
         if(contadorNumero!=11) {
-            if (multipleSelec() || !OP1.isSelected() && !OP2.isSelected() && !OP1.isSelected()) {
+            if (multipleSelec() || !OP1.isSelected() && !OP2.isSelected() && !OP3.isSelected()) {
                 alerta.setContentText("Solo una opcion.");
                 alerta.show();
             }
@@ -73,8 +79,8 @@ public class PreguntaController {
             idsNeutro.add(20);
             idsNeutro.add(21);
             switch (atributo) {
-                case "Luz":
-                    preguntaNormal = BD.montarPreguntaNormal(idsLuz.get(contadorId), atributo);
+                case Luz:
+                    preguntaNormal = BD.montarPreguntaNormal(idsLuz.get(contadorId), atributo.toString());
                     contadorId++;
                     contadorLuz++;
                     contadorNumero++;
@@ -91,8 +97,8 @@ public class PreguntaController {
                         puntuacion = puntuacion + preguntaNormal.getRespuestas().get(2).getPuntuacion();
                     }
                     break;
-                case "Oscuridad":
-                    preguntaNormal = BD.montarPreguntaNormal(idsOscuridad.get(contadorId), atributo);
+                case Oscuridad:
+                    preguntaNormal = BD.montarPreguntaNormal(idsOscuridad.get(contadorId), atributo.toString());
                     contadorId++;
                     contadorOscuridad++;
                     contadorNumero++;
@@ -108,8 +114,8 @@ public class PreguntaController {
                         puntuacion = puntuacion + preguntaNormal.getRespuestas().get(2).getPuntuacion();
                     }
                     break;
-                case "Neutral":
-                    preguntaNormal = BD.montarPreguntaNormal(idsNeutro.get(contadorId), atributo);
+                case Neutral:
+                    preguntaNormal = BD.montarPreguntaNormal(idsNeutro.get(contadorId), atributo.toString());
                     contadorId++;
                     contadorNeutro++;
                     contadorNumero++;
@@ -125,7 +131,7 @@ public class PreguntaController {
                         puntuacion = puntuacion + preguntaNormal.getRespuestas().get(2).getPuntuacion();
                     }
                     break;
-                default:
+                case Otro:
                     if (OP1.isSelected()) {
                         contadorLuz++;
                     } else if (OP2.isSelected()) {
@@ -141,17 +147,16 @@ public class PreguntaController {
                     OP3.setText(preguntaInicial.getRespuestasIniciales().get(2).getTextoRespuesta());
                     if (contadorNumero == 4) {
                         if (contadorLuz > contadorOscuridad && contadorLuz > contadorNeutro) {
-                            atributo = "Luz";
+                            atributo = Atributo.Luz;
                         } else if (contadorOscuridad > contadorLuz && contadorOscuridad > contadorNeutro) {
-                            atributo = "Oscuridad";
+                            atributo = Atributo.Oscuridad;
                         } else {
-                            atributo = "Neutral";
+                            atributo = Atributo.Neutral;
                         }
                     }
                     break;
             }
         }else{
-
         }
         //llamar a comprobar cuando pulse siguiente
     }
@@ -181,6 +186,13 @@ public class PreguntaController {
             contador++;
         }
         return contador > 1;
+    }
+    void irAFinal(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("final.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
 }
