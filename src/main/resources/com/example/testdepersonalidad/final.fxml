@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testdepersonalidad.FinalController">
+   <children>
+      <Text layoutX="133.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu personaje de Star Wars es">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="respuesta" layoutX="229.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Respuesta">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="reiniciar" layoutX="270.0" layoutY="274.0" mnemonicParsing="false" onAction="#irAInicio" text="Reiniciar" />
+   </children>
+</AnchorPane>
