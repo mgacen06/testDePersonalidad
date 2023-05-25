@@ -14,7 +14,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -63,16 +62,11 @@ public class PreguntaController {
     @FXML
     void siguientePregunta(ActionEvent event) {
         contador.setText(String.valueOf(contadorNumero));
-        if (contadorNumero != 12) {
+        if(contadorNumero!=12) {
             if (multipleSelec() || !OP1.isSelected() && !OP2.isSelected() && !OP3.isSelected()) {
                 alerta.setContentText("Solo una opcion.");
                 alerta.show();
-            } else {
-                if (OP1.isSelected() || OP2.isSelected() || OP3.isSelected()) {
-                    OP1.setSelected(false);
-                    OP2.setSelected(false);
-                    OP3.setSelected(false);
-                }
+            }else{
                 ArrayList<Integer> idsLuz = new ArrayList<>();//1-7
                 ArrayList<Integer> idsOscuridad = new ArrayList<>();//8-14
                 ArrayList<Integer> idsNeutro = new ArrayList<>();//15-21
@@ -102,10 +96,10 @@ public class PreguntaController {
                         atributo = Atributo.Luz;
                     } else if (contadorOscuridad > contadorLuz && contadorOscuridad > contadorNeutro) {
                         atributo = Atributo.Oscuridad;
-                    } else if (contadorNeutro > contadorLuz && contadorNeutro > contadorOscuridad) {
+                    } else if(contadorNeutro > contadorLuz && contadorNeutro > contadorOscuridad){
                         atributo = Atributo.Neutral;
-                    } else {
-                        atributo = Atributo.Otro;
+                    }else{
+                        atributo=Atributo.Otro;
                     }
                 }
                 switch (atributo) {
@@ -176,8 +170,13 @@ public class PreguntaController {
                         OP2.setText(preguntaInicial.getRespuestasIniciales().get(1).getTextoRespuesta());
                         OP3.setText(preguntaInicial.getRespuestasIniciales().get(2).getTextoRespuesta());
                 }
+                if (OP1.isSelected() || OP2.isSelected() || OP3.isSelected()) {
+                    OP1.setSelected(false);
+                    OP2.setSelected(false);
+                    OP3.setSelected(false);
+                }
             }
-        } else {
+        }else{
             contador.setText(String.valueOf(11));
         }
         //llamar a comprobar cuando pulse siguiente
